@@ -1,0 +1,64 @@
+{
+    "name": "monorepo-dependencies-utils",
+    "version": "0.1.0",
+    "type": "module",
+    "module": "build/index.js",
+    "types": "types/index.d.ts",
+    "exports": {
+        ".": [
+            {
+                "import": "./build/index.js"
+            },
+            {
+                "import": "./types/index.d.ts"
+            }
+        ]
+    },
+    "files": [
+        "build",
+        "types"
+    ],
+    "author": "Daniil Golovin <golovin.daniely@gmail.com>",
+    "scripts": {
+        "publish": "npm run build && npm publish --access public",
+        "build": "npm run clean && tsc -p ./tsconfig.build.json",
+        "clean": "rm -rf ./build && rm -rf ./types",
+        "lint": "eslint ./src",
+        "format": "prettier --write ./src",
+        "test:types": "tsc --noEmit",
+        "test": "jest",
+        "test:watch": "jest --watch"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.2.0",
+        "@swc/core": "1.4.17",
+        "@swc/jest": "0.2.36",
+        "@types/jest": "29.5.12",
+        "@types/node": "20.12.8 ",
+        "eslint": "^8.57.0",
+        "globals": "^15.1.0",
+        "jest": "29.7.0",
+        "prettier": "3.2.5",
+        "typescript": "5.4.5",
+        "typescript-eslint": "^7.8.0"
+    },
+    "prettier": {
+        "trailingComma": "es5",
+        "tabWidth": 4,
+        "semi": false,
+        "singleQuote": true
+    },
+    "description": "This package provides utility functions for creating dependency management tools tailored for monorepos. It offers functionality to generate maps of project dependencies and their trees, both shallow and deep.",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DanielGolovin/monorepo-dependencies-utils.git"
+    },
+    "keywords": [
+        "monorepo"
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/DanielGolovin/monorepo-dependencies-utils/issues"
+    },
+    "homepage": "https://github.com/DanielGolovin/monorepo-dependencies-utils#readme"
+}
