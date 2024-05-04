@@ -1,0 +1,12 @@
+{
+    "extends": "./tsconfig",
+    "compilerOptions": {
+        "outDir": "./build",
+        "declaration": true,
+        "declarationDir": "./types",
+        "sourceMap": false,
+        "noEmit": false,
+        "allowImportingTsExtensions": false
+    },
+    "exclude": ["src/**/*.test.ts", "src/tests/**"]
+}

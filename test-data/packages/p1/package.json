@@ -1,0 +1,6 @@
+{
+    "name": "p1",
+    "dependencies": {
+        "p2": ""
+    }
+}
